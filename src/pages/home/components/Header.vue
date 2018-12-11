@@ -35,9 +35,9 @@ export default {
     width .64rem
     float left
 
-  .back-icon
-    text-align center
-    font-size .4rem
+    .back-icon
+      text-align center
+      font-size .4rem
 
   .header-input
     flex 1
@@ -55,7 +55,7 @@ export default {
     float right
     text-align center
 
-  .arrow-icon
-    margin-left -.04rem
-    font-size .24rem
+    .arrow-icon
+      margin-left -.04rem
+      font-size .24rem
 </style>
