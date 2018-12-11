@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img"
              :src="item.imgUrl">
         <div class="item-info">
@@ -18,25 +18,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'https://imgs.qunarzz.com/p/tts6/1803/53/6f3276907a789902.jpg_r_390x260x90_6f5b802c.jpg',
-        title: '呼伦贝尔',
-        desc: '越野穿越+草原'
-      }, {
-        id: '0002',
-        imgUrl: 'https://imgs.qunarzz.com/p/tts6/1803/53/6f3276907a789902.jpg_r_390x260x90_6f5b802c.jpg',
-        title: '呼伦贝尔',
-        desc: '越野穿越+草原'
-      }, {
-        id: '0003',
-        imgUrl: 'https://imgs.qunarzz.com/p/tts6/1803/53/6f3276907a789902.jpg_r_390x260x90_6f5b802c.jpg',
-        title: '呼伦贝尔',
-        desc: '越野穿越+草原'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -17,52 +17,22 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      iconList: [{
-        id: '0001',
-        imgUrl: 'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/f1d64e3493b3ead1b65ac97710c7592e_121_121.jpg',
-        desc: '景点门票'
-      }, {
-        id: '0002',
-        imgUrl: 'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/f1d64e3493b3ead1b65ac97710c7592e_121_121.jpg',
-        desc: '滑雪季'
-      }, {
-        id: '0003',
-        imgUrl: 'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/f1d64e3493b3ead1b65ac97710c7592e_121_121.jpg',
-        desc: '泡温泉'
-      }, {
-        id: '0004',
-        imgUrl: 'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/f1d64e3493b3ead1b65ac97710c7592e_121_121.jpg',
-        desc: '动植园'
-      }, {
-        id: '0005',
-        imgUrl: 'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/f1d64e3493b3ead1b65ac97710c7592e_121_121.jpg',
-        desc: '景点门票'
-      }, {
-        id: '0006',
-        imgUrl: 'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/f1d64e3493b3ead1b65ac97710c7592e_121_121.jpg',
-        desc: '滑雪季'
-      }, {
-        id: '0007',
-        imgUrl: 'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/f1d64e3493b3ead1b65ac97710c7592e_121_121.jpg',
-        desc: '泡温泉'
-      }, {
-        id: '0008',
-        imgUrl: 'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/f1d64e3493b3ead1b65ac97710c7592e_121_121.jpg',
-        desc: '动植园'
-      }, {
-        id: '0009',
-        imgUrl: 'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/f1d64e3493b3ead1b65ac97710c7592e_121_121.jpg',
-        desc: '动植园'
-      }]
+      swiperOption: {
+        // 不自动滚动
+        autoplay: false
+      }
     }
   },
   computed: {
     // 当超过8个时做到轮播切换
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
