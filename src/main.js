@@ -14,6 +14,7 @@ import 'styles/iconfont.css'
 // 轮播图引用
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+import store from './store'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
@@ -24,6 +25,7 @@ new Vue({
   el: '#app',
   /* 在es6中键和值相同可以省略值 */
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
