@@ -7,6 +7,8 @@ import Detail from '@/pages/detail/Detail'
 Vue.use(Router)
 
 export default new Router({
+  // component: () =>用于异步加载组件，按需加载组件
+  // 当项目很大时才会使用
   routes: [
     {
       path: '/',
